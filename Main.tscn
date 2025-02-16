@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba2s37cmel1u3"]
+
+[ext_resource type="Script" path="res://scripts/PlayerController.cs" id="1_btn0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls1xg"]
+size = Vector2(17, 283)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsaw8"]
+radius = 20.0
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Level"]
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Wall2" type="StaticBody2D" parent="Level"]
+position = Vector2(462, -1)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall2"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall2"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Wall3" type="StaticBody2D" parent="Level"]
+position = Vector2(-1, -284)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall3"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall3"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Wall4" type="StaticBody2D" parent="Level"]
+position = Vector2(461, -285)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall4"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall4"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Wall5" type="StaticBody2D" parent="Level"]
+position = Vector2(1, -564)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall5"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall5"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Wall6" type="StaticBody2D" parent="Level"]
+position = Vector2(463, -565)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Wall6"]
+offset_right = 17.0
+offset_bottom = 283.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall6"]
+position = Vector2(8.5, 141.5)
+shape = SubResource("RectangleShape2D_ls1xg")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_btn0t")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+position = Vector2(259, 111)
+gravity_scale = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(21, 20)
+shape = SubResource("CircleShape2D_vsaw8")
