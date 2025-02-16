@@ -23,7 +23,15 @@ public partial class BallController : RigidBody2D
 		var col = MoveAndCollide(velocity);
 		acceleration = Vector2.Zero;
 		if(col!=null){
-			velocity = velocity.Bounce(col.GetNormal());
+			GD.Print(col.GetCollider() is HoleController);
+			if(col.GetCollider() is HoleController){
+				GetNode<GameManager>("/root/Root/GameManager").NextLevel();
+				GlobalPosition = Vector2.Zero;
+				velocity = Vector2.Zero;
+				acceleration = Vector2.Zero;
+			}else{
+				velocity = velocity.Bounce(col.GetNormal());
+			}
 		}
 	}
 

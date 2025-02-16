@@ -22,7 +22,6 @@ public partial class PlayerController : Node2D
 			if(Input.IsActionJustPressed("swing")){
 				GetNode<Line2D>("Line2D").AddPoint(GetGlobalMousePosition());
 				GetNode<Line2D>("Line2D").AddPoint(GetGlobalMousePosition());
-				GD.Print("left");
 				swingState = SwingState.SWINGING;
 				swingStartingPos = GetGlobalMousePosition();
 			}
