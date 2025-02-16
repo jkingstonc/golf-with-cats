@@ -30,7 +30,7 @@ public partial class PlayerController : Node2D
 				var power = diff.Length();
 				GD.Print($"dir = {dir} power = {power}");
 
-				GetNode<RigidBody2D>("/root/Root/Ball").ApplyImpulse(dir * power);
+				GetNode<BallController>("/root/Root/Ball").ApplyForce(-diff);
 
 				swingState = SwingState.IDLE;
 			}

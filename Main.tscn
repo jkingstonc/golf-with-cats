@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba2s37cmel1u3"]
+[gd_scene load_steps=5 format=3 uid="uid://ba2s37cmel1u3"]
 
 [ext_resource type="Script" path="res://scripts/PlayerController.cs" id="1_btn0t"]
+[ext_resource type="Script" path="res://scripts/BallController.cs" id="2_8a2nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls1xg"]
 size = Vector2(17, 283)
@@ -9,8 +10,6 @@ size = Vector2(17, 283)
 radius = 20.0
 
 [node name="Root" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -91,12 +90,24 @@ script = ExtResource("1_btn0t")
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2(259, 111)
 gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("2_8a2nn")
 
 [node name="ColorRect" type="ColorRect" parent="Ball"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-position = Vector2(21, 20)
 shape = SubResource("CircleShape2D_vsaw8")
+
+[node name="Camera2D" type="Camera2D" parent="Ball"]
