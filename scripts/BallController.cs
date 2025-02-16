@@ -3,13 +3,18 @@ using Godot;
 public partial class BallController : RigidBody2D
 {	
 
-	private static float SPEED = 100;
 	private static float DECELERATION_RATE = 0.98f;
 	private Vector2 velocity = Vector2.Zero;
 	private Vector2 acceleration = Vector2.Zero;
+	public bool Moving = false;
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if(velocity==Vector2.Zero){
+			Moving = false;
+		}else{
+			Moving = true;
+		}
 		velocity = velocity + acceleration * (float)delta;
 		velocity = velocity * DECELERATION_RATE;
 		if(velocity.Length() < .005){
